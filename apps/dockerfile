@@ -1,6 +1,9 @@
 #menentukan image
 FROM node:18.16
 
+# WORKDIR
+WORKDIR /app
+
 # PERINTAH YANG DIJALANKAN PADA SAAT PEMBUATAN IMAGE
 RUN apt update -y && npm install
 
@@ -14,4 +17,4 @@ LABEL email="sultan.farhan2601@gmail.com"
 CMD ["npm", "start"]
 
 # DESCRIBE EXPOSE PORT
-POSE 3000
+EXPOSE 3000 
