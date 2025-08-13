@@ -1,20 +1,18 @@
-#menentukan image
-FROM node:18.16
+FROM node:18.17
 
-# WORKDIR
-WORKDIR /app
-
-# PERINTAH YANG DIJALANKAN PADA SAAT PEMBUATAN IMAGE
-RUN apt update -y && npm install
-
-# COPY FILE TO IMAGE
-ADD . /app
-
-# MAINTAINER
 LABEL email="sultan.farhan2601@gmail.com"
 
-# PERINTAH YANG DIJALANKAN PADA SAAT CONTAINER SUDAH UP
+#Set working directory
+WORKDIR /app
+
+##copy file image
+ADD . /app
+
+#Install dependencies
+RUN apt update -y && npm install
+
+#Command to run the app
 CMD ["npm", "start"]
 
-# DESCRIBE EXPOSE PORT
-EXPOSE 3000 
+#Expose the port the app runs on
+EXPOSE 3000
