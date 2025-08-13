@@ -1,0 +1,17 @@
+#menentukan image
+FROM node:18.16
+
+# PERINTAH YANG DIJALANKAN PADA SAAT PEMBUATAN IMAGE
+RUN apt update -y && npm install
+
+# COPY FILE TO IMAGE
+ADD . /app
+
+# MAINTAINER
+LABEL email="sultan.farhan2601@gmail.com"
+
+# PERINTAH YANG DIJALANKAN PADA SAAT CONTAINER SUDAH UP
+CMD ["npm", "start"]
+
+# DESCRIBE EXPOSE PORT
+POSE 3000
