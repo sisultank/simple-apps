@@ -2,7 +2,7 @@ services:
   app-simpleapps:
     container_name: ct-simpleapps
     build: ./apps
-    image: simple-apps:latest
+    image: sisultank/simple-apps
     ports:
       - 10000:3000
     restart: always
