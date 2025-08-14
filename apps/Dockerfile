@@ -1,0 +1,19 @@
+FROM node:18.17
+
+LABEL email="sultan.farhan2601@gmail.com"
+
+#Set working directory
+WORKDIR /app
+
+##copy file image
+ADD . /app
+
+#Install dependencies
+RUN apt update -y && npm install
+
+#Command to run the app
+CMD ["npm", "start"]
+
+#Expose the port the app runs on
+EXPOSE 3000
+
