@@ -1,19 +1,22 @@
-# must be unique in a given SonarQube instance
+
+# Required properties (must be unique)
 sonar.projectKey=simple-apps
 
-# --- optional properties ---
-
-# defaults to project key
+# Project identification
 sonar.projectName=simple-apps
-# defaults to 'not provided'
 sonar.projectVersion=1.0
- 
-# Path is relative to the sonar-project.properties file. Defaults to .
+
+# Source files configuration
 sonar.sources=.
- 
-# Encoding of the source code. Default is default system encoding
 sonar.sourceEncoding=UTF-8
 
-sonar.exclusions=apps/coverage/ ** , apps/node_modules/ ** , apps/testing/ ** , apps/Dockerfile
+# Test configuration
+sonar.tests=apps/testing
+sonar.test.inclusions=**/*.test.js
+sonar.javascript.lcov.reportPaths=coverage/lcov.info
 
+# Exclusions (more precise)
+sonar.exclusions=apps/coverage/**, apps/node_modules/, apps/testing/**, apps/Dockerfile
+
+# JavaScript/TypeScript specific
 sonar.javascript.file.suffixes=apps/coverage/lcov.info
