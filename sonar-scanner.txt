@@ -1,0 +1,7 @@
+sonar-scanner \
+  -Dsonar.projectKey=simple-apps \
+  -Dsonar.sources=. \
+  -Dsonar.host.url=http://172.23.8.12:9000/ \
+  -Dsonar.login=sqp_5cc93864dbad78fcdb1adc49b18c705bd3ace68e
+
+9ed2a23a0b9e4c158ca49049d282860c
